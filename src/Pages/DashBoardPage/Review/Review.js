@@ -6,9 +6,10 @@ import useAuth from '../../../Hooks/useAuth';
 const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
+
     const onSubmit = data => {
         data.date = new Date().toLocaleDateString();
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://shielded-wave-62421.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');

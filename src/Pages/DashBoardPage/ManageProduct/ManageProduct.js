@@ -4,13 +4,13 @@ const ManageProduct = () => {
     const [allCars, setAllCars] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://shielded-wave-62421.herokuapp.com/cars')
             .then(res => res.json())
             .then(data => setAllCars(data))
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:5000/deleteCar/${id}`
+        const url = `https://shielded-wave-62421.herokuapp.com/deleteCar/${id}`
         fetch(url, {
             method: "DELETE",
             headers: { "content-type": "application.json" }

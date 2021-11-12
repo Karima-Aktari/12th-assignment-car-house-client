@@ -18,7 +18,7 @@ const Bookings = () => {
         data.order = booking;
         data.status = "pending";
         data.date = new Date().toLocaleDateString();
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://shielded-wave-62421.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');
@@ -28,7 +28,7 @@ const Bookings = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/cars/${bookingId}`;
+        const url = `https://shielded-wave-62421.herokuapp.com/cars/${bookingId}`;
         console.log(url);
         fetch(url)
             .then(res => res.json())

@@ -1,6 +1,6 @@
 import {
     getAuth, signInWithPopup, GoogleAuthProvider,
-    createUserWithEmailAndPassword,
+    createUserWithEmailAndPassword, updateProfile,
     signInWithEmailAndPassword, signOut, onAuthStateChanged
 } from "firebase/auth";
 import { useEffect } from "react";
@@ -56,14 +56,14 @@ const useFirebase = () => {
                 //save user to the database
                 saveUser(email, name, 'POST');
 
-                //Send name to firebase after creation
-                // updateProfile(auth.currentUser, {
-                //     displayName: name
-                // }).then(() => {
+                // Send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
 
-                // }).catch((error) => {
+                }).catch((error) => {
 
-                // } );
+                });
                 history.replace('/');
             })
             .catch((error) => {
@@ -105,7 +105,7 @@ const useFirebase = () => {
 
     //set Admin
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://shielded-wave-62421.herokuapp.com/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -113,7 +113,7 @@ const useFirebase = () => {
     //Make user and save in database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://shielded-wave-62421.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

@@ -9,7 +9,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const email = user?.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${email}`)
+        fetch(`https://shielded-wave-62421.herokuapp.com/myOrders/${email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [email]);
@@ -22,8 +22,8 @@ const MyOrders = () => {
             <h1>My Orders List:- {orders.length}</h1>
             <div className="row text-center mx-auto">
                 {orders?.map((order) => (
-                    <div className="col-12 col-md-6 col-lg-6 p-3" key={order._id}>
-                        <div className="border rounded-3 p-2 bg-info">
+                    <div className="col-12 col-lg-6" key={order._id}>
+                        <div className="border rounded-3 p-1 py-3 bg-info">
                             <img src={order?.order.img} className="w-75 rounded-3" alt="" />
                             <h5>{order?.name}</h5>
                             <h4>{order.email}</h4>

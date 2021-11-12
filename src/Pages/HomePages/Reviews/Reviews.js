@@ -5,19 +5,19 @@ const Reviews = () => {
 
     //Show Reviews
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://shielded-wave-62421.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
 
     return (
-        <div className=" bg-success p-4 text-warning">
+        <div className=" bg-success py-4 text-warning">
             <h1>Consumer reviews</h1>
             <div className="row mx-auto text-secondary">
                 {
                     reviews.map(review =>
-                        <div key={review._id} className="col-12 col-md-6 p-4">
-                            <div className="bg-light p-4">
+                        <div key={review._id} className="col-12 col-lg-6 p-2">
+                            <div className="bg-light p-2 py-3 w-100">
                                 <h2>{review.name}</h2>
                                 <h2>{review.email}</h2>
                                 <h5>{review.description}</h5>

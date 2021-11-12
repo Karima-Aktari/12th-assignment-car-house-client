@@ -10,7 +10,7 @@ const AddProduct = () => {
     const { isLoading } = useAuth();
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/cars', data)
+        axios.post('https://shielded-wave-62421.herokuapp.com/cars', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added Successfully');
