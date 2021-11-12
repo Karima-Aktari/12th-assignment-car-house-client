@@ -1,0 +1,12 @@
+.banner{
+    background-image: url('https://di-uploads-pod2.dealerinspire.com/sunshinekiaofmiami/uploads/2018/12/2018-12-20-14_14_32-Kia-CPO-_-Kia-Cars-including-Optima-Soul-Rio-More.png');
+    height:70vh;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.banner h1{
+    font-family:fantasy;
+    color: rgb(241, 97, 97);
+}

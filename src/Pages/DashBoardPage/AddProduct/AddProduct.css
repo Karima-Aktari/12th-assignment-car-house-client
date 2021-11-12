@@ -1,0 +1,20 @@
+.addProduct{
+    color: white;
+}
+.addProduct form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+.addProduct form input, textarea{
+    width:35%;
+    margin: 10px 0px;
+    /* background-color: rgb(241, 239, 233); */
+    text-align: center;
+    border-radius: 25px;
+}
+.addProduct form input{
+    padding: 1%;
+}
