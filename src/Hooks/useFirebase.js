@@ -23,7 +23,7 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user?.email, user?.displayName, 'PUT');
                 const destination = location?.state?.from || '/';
                 history.push(destination);
                 setAuthError('');
@@ -105,9 +105,9 @@ const useFirebase = () => {
 
     //set Admin
     useEffect(() => {
-        fetch(`https://shielded-wave-62421.herokuapp.com/${user?.email}`)
+        fetch(`https://shielded-wave-62421.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
-            .then(data => setAdmin(data.admin))
+            .then(data => setAdmin(data?.admin))
     }, [user.email])
 
     //Make user and save in database
@@ -123,6 +123,18 @@ const useFirebase = () => {
             .then()
 
     }
+    // const savePutUser = (email, displayName) => {
+    //     const user = { email, displayName };
+    //     fetch('http://localhost:5000/users', {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //         .then()
+
+    // }
 
 
     return {
