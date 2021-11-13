@@ -32,7 +32,6 @@ const MyOrders = () => {
                             <h5>Mobile-No.:{order.phone}</h5>
                             <h5>Brand:{order?.order.name}</h5>
                             <h5>${order?.order.price}</h5>
-                            <h5>{order?.order.duration}</h5>
                             <h6>Date:-{order?.date}</h6>
                             <button className="btn btn-warning">{order.status}</button> <br /><br />
                         </div>

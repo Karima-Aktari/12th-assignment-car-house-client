@@ -18,7 +18,7 @@ const DashBoard = () => {
     return (
         <div className="row mx-auto">
             {/* <Navigation></Navigation> */}
-            <div className="col-12 col-md-3 bg-light text-success">
+            <div className="col-12 col-md-2 bg-light text-success">
                 <nav>
                     {admin && <div>
                         <Link to={`${url}/addProduct`}>
@@ -50,7 +50,7 @@ const DashBoard = () => {
                 </nav>
                 <h2>Dash Link</h2>
             </div>
-            <div className="col-12 col-md-9 dasBoard-home">
+            <div className="col-12 col-md-10 dasBoard-home">
                 <h1 className="text-warning">This is DashBoard</h1>
                 <Switch>
                     <Route exact path={`${path}/payment`}>

@@ -17,7 +17,7 @@ const Reviews = () => {
                 {
                     reviews.map(review =>
                         <div key={review._id} className="col-12 col-lg-6 p-2">
-                            <div className="bg-light p-2 py-3 w-100">
+                            <div className="bg-light rounded-pill py-3 w-100">
                                 <h2>{review.name}</h2>
                                 <h2>{review.email}</h2>
                                 <h5>{review.description}</h5>

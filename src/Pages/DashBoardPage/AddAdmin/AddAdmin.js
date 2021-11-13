@@ -45,3 +45,5 @@ const AddAdmin = () => {
 };
 
 export default AddAdmin;
+
+// npm install -g serve

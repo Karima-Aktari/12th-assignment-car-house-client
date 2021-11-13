@@ -123,18 +123,6 @@ const useFirebase = () => {
             .then()
 
     }
-    // const savePutUser = (email, displayName) => {
-    //     const user = { email, displayName };
-    //     fetch('http://localhost:5000/users', {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-
-    // }
 
 
     return {

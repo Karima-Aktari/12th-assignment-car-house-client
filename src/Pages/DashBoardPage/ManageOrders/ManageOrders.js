@@ -5,30 +5,45 @@ import { Spinner } from 'react-bootstrap';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
-    const { isLoading } = useAuth();
+    const { user, isLoading } = useAuth();
 
     useEffect(() => {
         fetch('https://shielded-wave-62421.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [])
+    }, []);
 
     // Delete Order
     const handleDelete = id => {
-        const url = `https://shielded-wave-62421.herokuapp.com/deleteOrder/${id}`
-        fetch(url, {
-            method: "DELETE",
-            headers: { "content-type": "application.json" }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    alert('Are You Sure To DELETE')
-                    const remaining = orders.filter(service => service._id !== id);
-                    setOrders(remaining);
-                }
+        const proceed = window.confirm('Are You Sure To DELETE?');
+        if (proceed) {
+            const url = `https://shielded-wave-62421.herokuapp.com/deleteOrder/${id}`
+            fetch(url, {
+                method: "DELETE",
+                headers: { "content-type": "application.json" }
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        alert('DELETE Successful')
+                        const remaining = orders.filter(service => service._id !== id);
+                        setOrders(remaining);
+                    }
+                })
+        }
     }
+    //Update orders
+    // const onSubmit = (data) => {
+
+    //     fetch(`http://localhost:5000/updateOrder/${orderId}`, {
+    //         method: "PUT",
+    //         headers: { "content-type": "application/json" },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then((res) => res.json())
+    //         .then((result) => console.log(result));
+    // };
+
     // Spinner setting
     if (isLoading) {
         return <Spinner animation="border" variant="warning" />
@@ -52,6 +67,7 @@ const ManageOrders = () => {
                             <h6>Date:-{order?.date}</h6>
                             <button className="btn btn-warning">{order.status}</button> <br /><br />
                             <button onClick={() => handleDelete(order._id)} className="btn btn-danger px-4">Delete</button>
+                            {/* <button onClick={() => handleUpdate(order._id)} className="btn btn-danger px-4">Update</button> */}
                         </div>
                     </div>
                 ))}

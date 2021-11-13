@@ -17,13 +17,13 @@ const Footer = () => {
                     <div>
                         <div className=" d-flex justify-content-center">
                             <a rel="noopener noreferrer"
-                                target="_blank" href="https://www.obokash.com/"><i className="fab fa-facebook-square text-primary fs-1 p-1"></i></a>
+                                target="_blank" href="https://www.bmwgroup.com/"><i className="fab fa-facebook-square text-primary fs-1 p-1"></i></a>
                             <a rel="noopener noreferrer"
-                                target="_blank" href="https://sharetrip.net/"><i className="fab fa-linkedin text-danger fs-1 p-1"></i></a>
+                                target="_blank" href="https://www.honda.com/"><i className="fab fa-linkedin text-danger fs-1 p-1"></i></a>
                             <a rel="noopener noreferrer"
-                                target="_blank" href="https://www.obokash.com/"><i className="fab fa-instagram-square text-warning fs-1 p-1"></i></a>
+                                target="_blank" href="https://www.mazda.com/"><i className="fab fa-instagram-square text-warning fs-1 p-1"></i></a>
                             <a rel="noopener noreferrer"
-                                target="_blank" href="https://sharetrip.net/"><i className="fab fa-skype text-info fs-1 p-1"></i></a>
+                                target="_blank" href="https://www.volvocars.com/intl"><i className="fab fa-skype text-info fs-1 p-1"></i></a>
                         </div>
                     </div>
                 </div>

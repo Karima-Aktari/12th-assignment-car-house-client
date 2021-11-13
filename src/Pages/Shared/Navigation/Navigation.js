@@ -14,7 +14,6 @@ const Navigation = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} className="text-white" to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} className="text-white" to="/allCars">Explore</Nav.Link>
-                        <Nav.Link as={Link} className="text-white" to="/home">Home</Nav.Link>
 
                         {
                             user.email ?
@@ -22,12 +21,9 @@ const Navigation = () => {
                                     <NavLink as={Link} className="text-white" to="/dashBoard">DashBoard</NavLink>
                                     <Button onClick={logout} variant="light">Logout</Button>
                                 </div> :
-                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                                <Nav.Link as={Link} className="text-white" to="/login">Login</Nav.Link>
                         }
-                        {/* <Navbar.Text>
-                            Signed in as: <a href="#login">{user.displayName}</a>
-                        </Navbar.Text> */}
-                        {/* <Nav.Link as={Link} className="text-white" to="/login">Login</Nav.Link> */}
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
