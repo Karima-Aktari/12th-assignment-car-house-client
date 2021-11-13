@@ -5,13 +5,14 @@ import { Spinner } from 'react-bootstrap';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
-    const { user, isLoading } = useAuth();
+    const { isLoading } = useAuth();
+
 
     useEffect(() => {
         fetch('https://shielded-wave-62421.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [orders]);
 
     // Delete Order
     const handleDelete = id => {
@@ -33,16 +34,25 @@ const ManageOrders = () => {
         }
     }
     //Update orders
-    // const onSubmit = (data) => {
+    const handleUpdate = (id) => {
+        const proceed = window.confirm('Are you sure to shipped the order?');
+        if (proceed) {
+            const url = `https://shielded-wave-62421.herokuapp.com/orders/${id}`
+            fetch(url, {
+                method: "PUT",
+                headers: { "content-type": "application.json" },
+                body: JSON.stringify()
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        alert('Shipped completed')
+                    }
 
-    //     fetch(`http://localhost:5000/updateOrder/${orderId}`, {
-    //         method: "PUT",
-    //         headers: { "content-type": "application/json" },
-    //         body: JSON.stringify(data),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((result) => console.log(result));
-    // };
+                    console.log(data)
+                })
+        }
+    }
 
     // Spinner setting
     if (isLoading) {
@@ -51,7 +61,8 @@ const ManageOrders = () => {
 
     return (
 
-        <div >
+        <div>
+            <h2>Manage Orders</h2>
             <div className="row text-center mx-auto">
                 {orders?.map((order) => (
                     <div className="col-12 col-md-6 col-lg-6 p-3" key={order._id}>
@@ -65,9 +76,8 @@ const ManageOrders = () => {
                             <h5>Brand:{order?.order.name}</h5>
                             <h5>${order?.order.price}</h5>
                             <h6>Date:-{order?.date}</h6>
-                            <button className="btn btn-warning">{order.status}</button> <br /><br />
+                            <button onClick={() => handleUpdate(order._id)} className="btn bg-warning mx-2 px-2">{order.status}</button>
                             <button onClick={() => handleDelete(order._id)} className="btn btn-danger px-4">Delete</button>
-                            {/* <button onClick={() => handleUpdate(order._id)} className="btn btn-danger px-4">Update</button> */}
                         </div>
                     </div>
                 ))}

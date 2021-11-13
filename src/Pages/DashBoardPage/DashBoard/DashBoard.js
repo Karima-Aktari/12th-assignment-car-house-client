@@ -10,14 +10,13 @@ import ManageOrders from '../ManageOrders/ManageOrders';
 import AddAdmin from '../AddAdmin/AddAdmin';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../AdminRoute/AdminRoute';
-// import Navigation from '../../Shared/Navigation/Navigation';
 
 const DashBoard = () => {
     let { path, url } = useRouteMatch();
     const { admin } = useAuth();
+
     return (
         <div className="row mx-auto">
-            {/* <Navigation></Navigation> */}
             <div className="col-12 col-md-2 bg-light text-success">
                 <nav>
                     {admin && <div>
