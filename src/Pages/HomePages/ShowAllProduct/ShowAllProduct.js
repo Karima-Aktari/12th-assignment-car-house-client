@@ -6,7 +6,7 @@ const ShowAllProduct = ({ car }) => {
     const { _id, img, name, price, description } = car;
 
     return (
-        <div className="col-12 col-md-6 col-lg-4 p-2">
+        <div className="col-12 col-md-6 col-lg-4 p-2 product">
             <div>
                 <img src={img} className="w-75 rounded-3" alt=""></img>
                 <h2>{name}</h2>

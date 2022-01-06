@@ -102,7 +102,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribe;
-    }, [])
+    }, [auth])
 
     //set Admin
     useEffect(() => {

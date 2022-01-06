@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Rating from 'react-rating';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -22,6 +23,11 @@ const Reviews = () => {
                                 <h2>{review.email}</h2>
                                 <h5>{review.description}</h5>
                                 <h4>{review.date}</h4>
+                                <p className=" mb-1 fs-5">
+                                    <Rating initialRating={review.rating} emptySymbol="far fa-star text-warning"
+                                        fullSymbol="fas fa-star text-warning" readonly>
+                                    </Rating>
+                                </p>
                             </div>
                         </div>)
                 }
