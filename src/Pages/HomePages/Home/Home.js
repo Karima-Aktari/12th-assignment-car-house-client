@@ -6,7 +6,7 @@ import Offers from '../Offers/Offers';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
             <ShowProducts></ShowProducts>
             <Reviews></Reviews>

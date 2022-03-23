@@ -12,7 +12,7 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className=" bg-success py-4 text-warning">
+        <div className=" bg-primary py-4 text-warning">
             <h1>Consumer reviews</h1>
             <div className="row mx-auto text-secondary">
                 {

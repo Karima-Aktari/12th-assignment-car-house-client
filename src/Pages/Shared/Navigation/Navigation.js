@@ -7,7 +7,7 @@ const Navigation = () => {
     const { user, logout } = useAuth();
     return (
         <>
-            <Navbar bg="secondary" variant="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar bg="info" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand>CARHOUSE</Navbar.Brand>
                     <Navbar.Toggle />
@@ -19,7 +19,7 @@ const Navigation = () => {
                             user.email ?
                                 <div>
                                     <NavLink as={Link} className="text-white" to="/dashBoard">DashBoard</NavLink>
-                                    <Button onClick={logout} variant="light">Logout</Button>
+                                    <Button onClick={logout} variant="light m-1">Logout</Button>
                                 </div> :
                                 <Nav.Link as={Link} className="text-white" to="/login">Login</Nav.Link>
                         }

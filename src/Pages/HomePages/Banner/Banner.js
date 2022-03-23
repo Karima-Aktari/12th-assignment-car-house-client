@@ -3,13 +3,17 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className="mx-auto banner pt-4">
-            < div className="pt-4" >
-                <h1 className="pt-4">CARHOUSE</h1>
-                <h1 className="text-warning">TOP BRANDS-2021</h1>
-                <h1>MODERN-CLASSIC</h1>
-                <h1>INCREDIBLE</h1>
-            </div >
+        <div className="mx-auto">
+            <div className='banner'>
+                <div className='banner-shadow'>
+                    <div className="pt-5 banner-text" >
+                        <h1 className="pt-4">CARHOUSE</h1>
+                        <h2 className="">TOP BRANDS-2022</h2>
+                        <h3>MODERN-CLASSIC</h3>
+                        <h3>INCREDIBLE</h3>
+                    </div >
+                </div>
+            </div>
         </div >
     );
 };
