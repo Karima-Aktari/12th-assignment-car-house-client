@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Rating from 'react-rating';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -17,7 +19,8 @@ const Reviews = () => {
             <div className="row mx-auto text-secondary">
                 {
                     reviews.map(review =>
-                        <div key={review._id} className="col-12 col-lg-6 p-2">
+                        <div key={review._id} className="col-12 col-lg-6 p-2" data-aos="fade-up"
+                            data-aos-duration="3000">
                             <div className="bg-light rounded-pill py-3 w-100">
                                 <h2>{review.name}</h2>
                                 <h2>{review.email}</h2>
