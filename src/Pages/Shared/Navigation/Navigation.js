@@ -7,7 +7,7 @@ const Navigation = () => {
     const { user, logout } = useAuth();
     return (
         <>
-            <Navbar bg="info" variant="dark" sticky="top" collapseOnSelect expand="lg">
+            <Navbar bg="primary" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand>CARHOUSE</Navbar.Brand>
                     <Navbar.Toggle />

@@ -14,8 +14,8 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className=" bg-primary py-4 text-warning">
-            <h1>Consumer reviews</h1>
+        <div className=" bg-secondary py-4 text-warning">
+            <h1 className='py-3'>Consumer reviews</h1>
             <div className="row mx-auto text-secondary">
                 {
                     reviews.map(review =>
