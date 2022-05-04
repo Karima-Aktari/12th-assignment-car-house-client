@@ -11,9 +11,9 @@ const ShowAllProducts = () => {
             .then(data => setAllCars(data))
     }, [])
     return (
-        <div className="bg-dark text-info py-4">
+        <div className="bg-dark text-info py-4 mx-auto">
             <h1>Latest Brands Collection</h1>
-            <div className="row mx-auto p-3">
+            <div className="mx-auto p-3 row row-cols-1 row-cols-md-3 g-4">
                 {
                     allCars.map(car => <ShowAllProduct
                         key={car._id}

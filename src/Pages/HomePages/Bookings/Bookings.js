@@ -35,6 +35,7 @@ const Bookings = () => {
             .then(data => setBooking(data));
     }, [])
 
+    console.log(booking)
     if (isLoading) {
         return <Spinner animation="border" variant="warning" />
     }
