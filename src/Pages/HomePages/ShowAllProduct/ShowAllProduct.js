@@ -21,9 +21,10 @@ const ShowAllProduct = ({ car }) => {
         <div class="col product mx-auto">
             <div class="card h-100">
                 <img src={img} className="w-full h-full rounded-3" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="card-body bg-dark">
+                    <h2 class="card-title">{name}</h2>
+                    <h3 class="card-title">${price}</h3>
+                    <p class="card-text">{description}</p>
                 </div>
             </div>
         </div>

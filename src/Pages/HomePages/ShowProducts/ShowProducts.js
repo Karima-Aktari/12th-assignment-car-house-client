@@ -11,9 +11,9 @@ const ShowProducts = () => {
     }, [])
 
     return (
-        <div className="bg-dark py-4">
+        <div className="bg-dark py-2">
             <h1 className="text-info">Popular Brand</h1>
-            <div className="row mx-auto p-4 text-white ">
+            <div className="row mx-auto py-2 text-white ">
                 {
                     cars.slice(0, 6).map(car => <ShowProduct
                         key={car._id}

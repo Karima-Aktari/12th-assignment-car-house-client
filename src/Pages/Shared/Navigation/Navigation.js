@@ -9,7 +9,7 @@ const Navigation = () => {
         <>
             <Navbar bg="primary" variant="dark" sticky="top" collapseOnSelect expand="lg">
                 <Container>
-                    <Navbar.Brand>CARHOUSE</Navbar.Brand>
+                    <Navbar.Brand className="fw-bolder text-warning">CARHOUSE</Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav.Link as={Link} className="text-white" to="/home">Home</Nav.Link>

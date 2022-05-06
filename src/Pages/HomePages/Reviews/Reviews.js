@@ -14,14 +14,14 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className=" bg-secondary py-4 text-warning">
+        <div className=" bg-danger py-4 text-warning">
             <h1 className='py-3'>Consumer reviews</h1>
             <div className="row mx-auto text-secondary">
                 {
                     reviews.map(review =>
-                        <div key={review._id} className="col-12 col-lg-6 p-2" data-aos="fade-up"
+                        <div key={review._id} className="col-12 col-lg-6 p-2 px-4" data-aos="fade-up"
                             data-aos-duration="3000">
-                            <div className="bg-light rounded-pill py-3 w-100">
+                            <div className="bg-dark text-light rounded-3 p-3 w-96 h-100 mx-auto">
                                 <h2>{review.name}</h2>
                                 <h2>{review.email}</h2>
                                 <h5>{review.description}</h5>
